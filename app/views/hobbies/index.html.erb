@@ -1,0 +1,9 @@
+<h1>Passions</h1>
+
+<ul>
+  <% @hobbies.each do |hobby| %>
+    <li><%= link_to hobby.name, hobby_path(hobby) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add New Hobby", new_hobby_path %>
