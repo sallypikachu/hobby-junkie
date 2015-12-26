@@ -25,13 +25,12 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li class="has-dropdown">
-          <a href="#">Menu</a>
-          <ul class="dropdown">
-            <li><a href="#">First link in dropdown</a></li>
-            <li><a href="#">Second link in dropdown</a></li>
-          </ul>
-        </li>
+        <% if current_user %>
+          <li><a href="#"><%= current_user.username %></a></li>
+          <li><%= link_to "Sign out", "/sign_out" %></li>
+        <% else %>
+          <li><%= link_to "Sign in with Github", "/auth/github" %></li>
+        <% end %>
       </ul>
     </section>
   </nav>
