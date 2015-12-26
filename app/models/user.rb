@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   def self.find_or_create_from_omniauth(auth)
     provider = auth.provider
     uid = auth.uid
+    binding.pry
 
     find_or_create_by(provider: provider, uid: uid) do |user|
       user.provider = provider
