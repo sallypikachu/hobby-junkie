@@ -15,3 +15,18 @@
  *= require foundation_and_overrides
 
  */
+
+.full-height {
+  background: url("home.jpg") no-repeat center center scroll;
+  background-size: cover;
+  height: 100%;
+}
+
+.shadow {
+  background: rgba(0,0,0,.7);
+  margin-top: 20%;
+}
+
+.shadow h1, h3 {
+  color: white;
+}

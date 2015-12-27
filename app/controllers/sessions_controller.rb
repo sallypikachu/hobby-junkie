@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def github
     @user = User.find_or_create_from_omniauth(auth_hash)
     session[:user_id] = @user.id
-    redirect_to '/'
+    redirect_to hobbies_path
   end
 
   def destroy

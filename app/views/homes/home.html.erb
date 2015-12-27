@@ -1,0 +1,18 @@
+<div id="top" class="full-height header text-center">
+  <div class="bg row">
+    <div class="small-8 small-offset-2 shadow columns">
+      <h1>Passion Craze</h1>
+      <h3>Let's share and discover our passions<h3>
+      <% if current_user %>
+        <a href="#" class="button">Your Passions</a>
+      <% else %>
+        <a href="/auth/github" class="button">Log in!</a>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).foundation();
+$(".full-height").height($(".main").parent().height());
+</script>
