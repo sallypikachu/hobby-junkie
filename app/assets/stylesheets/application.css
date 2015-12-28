@@ -16,6 +16,10 @@
 
  */
 
+ .top-bar img {
+   height: 45px;
+ }
+
 .full-height {
   background: url("home.jpg") no-repeat center center scroll;
   background-size: cover;
@@ -23,7 +27,7 @@
 }
 
 .shadow {
-  background: rgba(0,0,0,.7);
+  background: rgba(38,10,66,.7);
   margin-top: 20%;
 }
 
