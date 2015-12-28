@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def github
     @user = User.find_or_create_from_omniauth(auth_hash)
     session[:user_id] = @user.id
-    flash.notice = "You are not signed in as #{@user.username}"
+    flash.notice = "You are now signed in as #{@user.username}!"
     redirect_to hobbies_path
   end
 

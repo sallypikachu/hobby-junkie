@@ -13,15 +13,15 @@ feature "User signs in" do
 
   scenario "successful sign in" do
     visit '/'
-    login_as user, scope: :user
+    sign_in_as user
 
-    expect(page).to have_content "You're now signed in as #{user.username}!"
+    expect(page).to have_content "You are now signed in as #{user.username}!"
   end
 
   scenario "successful sign out" do
     visit '/'
     sign_in_as user
-    click_link "Sign Out"
+    click_link "Sign out"
 
     expect(page).to have_content "You have been signed out"
   end
