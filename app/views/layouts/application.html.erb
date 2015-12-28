@@ -35,10 +35,10 @@
     </section>
   </nav>
 
-  <% flash.notice do |key, value| %>
+  <% flash.each do |key, value| %>
   <%= value %>
   <% end %>
       <%= yield %>
-      
+
 </body>
 </html>

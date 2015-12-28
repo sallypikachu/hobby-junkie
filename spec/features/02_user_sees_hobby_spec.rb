@@ -7,8 +7,10 @@ require 'rails_helper'
 feature "user sees a list of his/her hobbies" do
   scenario "sees a list of hobbies and link for new hobby" do
 
-    breaking = Hobby.create(name: "Breaking", description: "Become a bgirl that can show-up all the bboys")
-    ukulele = Hobby.create(name: "Playing the Ukulele", description: "Learn the rhythm and beat to creating feel good music")
+    sally = User.create(id: 1, provider: "github", uid: "6314533", username: "sallypikachu", email: nil, avatar_url: "https://avatars.githubusercontent.com/u/6314533?v=3")
+
+    breaking = Hobby.create(name: "Breaking", description: "Become a bgirl that can show-up all the bboys", user: sally)
+    ukulele = Hobby.create(name: "Playing the Ukulele", description: "Learn the rhythm and beat to creating feel good music", user: sally)
 
     visit hobbies_path
 
@@ -19,9 +21,11 @@ feature "user sees a list of his/her hobbies" do
 
     expect(page).to have_content "New Hobby Form"
   end
-  
+
   scenario "clicks link and is taken to show page for given hobby" do
-    breaking = Hobby.create(name: "Breaking", description: "Become a bgirl that can show-up all the bboys")
+    sally = User.create(id: 1, provider: "github", uid: "6314533", username: "sallypikachu", email: nil, avatar_url: "https://avatars.githubusercontent.com/u/6314533?v=3")
+
+    breaking = Hobby.create(name: "Breaking", description: "Become a bgirl that can show-up all the bboys", user: sally)
 
     visit root_path
 
