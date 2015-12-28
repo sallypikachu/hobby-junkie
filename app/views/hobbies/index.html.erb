@@ -1,9 +1,14 @@
-<h1>Passions</h1>
+<div class="row">
+  <div class="small-12 columns">
 
-<ul>
-  <% @hobbies.each do |hobby| %>
-    <li><%= link_to hobby.name, hobby_path(hobby) %></li>
-  <% end %>
-</ul>
+  <h1>Passions</h1>
 
-<%= link_to "Add New Hobby", new_hobby_path %>
+  <ul>
+    <% @hobbies.each do |hobby| %>
+      <li><%= link_to hobby.name, hobby_path(hobby) %></li>
+    <% end %>
+  </ul>
+
+    <%= link_to "Add New Hobby", new_hobby_path %>
+  </div>
+</div>
