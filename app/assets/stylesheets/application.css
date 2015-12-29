@@ -16,15 +16,37 @@
 
  */
 
- .top-bar img {
+ /* Foundation */
+
+body h1, h2, h3, h4, h5, h6 {
+   font-family: 'Volkhov', serif;
+}
+
+.top-bar img {
    height: 45px;
- }
+}
 
 .full-height {
+   height: 100%;
+}
+
+.button {
+  padding: .8rem 1.8rem 1rem 1.8rem;
+}
+
+/* Background Images */
+
+.bg-img {
+  background: url("background.jpg") no-repeat center center scroll;
+  background-size: cover;
+}
+
+.home {
   background: url("home.jpg") no-repeat center center scroll;
   background-size: cover;
-  height: 100%;
 }
+
+/* Home Page */
 
 .shadow {
   background: rgba(38,10,66,.7);
@@ -33,4 +55,15 @@
 
 .shadow h1, h3 {
   color: white;
+}
+
+.title {
+  font-family: 'Kaushan Script', cursive;
+}
+
+/* Floating container */
+.floating-container {
+  margin: 10rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.88);
 }

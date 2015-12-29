@@ -5,10 +5,21 @@ require 'rails_helper'
 # [] Visiting the root path should display a list of all hobbies.
 
 feature "user sees a list of his/her hobbies" do
+  let(:sally) do
+    User.create(
+      provider: "github",
+      uid: "2",
+      username: "sallypikachu",
+      email: nil,
+      avatar_url: "https://avatars.githubusercontent.com/u/6314533?v=3"
+    )
+  end
+  before :each do
+    visit '/'
+    sign_in_as sally
+  end
+
   scenario "sees a list of hobbies and link for new hobby" do
-
-    sally = User.create(id: 1, provider: "github", uid: "6314533", username: "sallypikachu", email: nil, avatar_url: "https://avatars.githubusercontent.com/u/6314533?v=3")
-
     breaking = Hobby.create(name: "Breaking", description: "Become a bgirl that can show-up all the bboys", user: sally)
     ukulele = Hobby.create(name: "Playing the Ukulele", description: "Learn the rhythm and beat to creating feel good music", user: sally)
 
@@ -17,17 +28,16 @@ feature "user sees a list of his/her hobbies" do
     expect(page).to have_content breaking.name
     expect(page).to have_link ukulele.name
 
-    click_link "Add New Hobby"
+    click_link "Add a New Hobby"
 
     expect(page).to have_content "New Hobby Form"
   end
 
   scenario "clicks link and is taken to show page for given hobby" do
-    sally = User.create(id: 1, provider: "github", uid: "6314533", username: "sallypikachu", email: nil, avatar_url: "https://avatars.githubusercontent.com/u/6314533?v=3")
 
     breaking = Hobby.create(name: "Breaking", description: "Become a bgirl that can show-up all the bboys", user: sally)
 
-    visit root_path
+    visit hobbies_path
 
     click_link "Breaking"
 
