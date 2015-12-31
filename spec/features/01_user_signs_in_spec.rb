@@ -16,15 +16,10 @@ feature "User signs in" do
   end
 
   scenario "successful sign in" do
-    # visit '/'
-    # sign_in_as user
-
     expect(page).to have_content "You are now signed in as #{user.username}!"
   end
 
   scenario "successful sign out" do
-    # visit '/'
-    # sign_in_as user
     click_link "Sign out"
 
     expect(page).to have_content "You have been signed out"

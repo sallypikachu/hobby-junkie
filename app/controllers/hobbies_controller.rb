@@ -6,6 +6,7 @@ class HobbiesController < ApplicationController
 
   def show
     @hobby = Hobby.find(params[:id])
+    @tasks = @hobby.tasks
   end
 
   def new

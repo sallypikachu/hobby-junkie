@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="small-12 medium-10 medium-centered large-8 large-centered columns">
+    <h1>New Task</h1>
+
+    <%= form_for [@hobby, @task] do |f| %>
+    <div>
+      <%= f.label :task_name %>
+      <%= f.text_field :task_name %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+    <div>
+      <%= f.label :link %>
+      <%= f.text_field :link %>
+    </div>
+    <div>
+      <%= f.label :complete, "Mastered" %>
+      <%= f.check_box :complete %>
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
+</div>

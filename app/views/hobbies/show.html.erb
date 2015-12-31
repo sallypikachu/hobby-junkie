@@ -1,14 +1,22 @@
 <div class="full-height bg-img">
   <div class="row">
     <div class="small-12 columns">
-      <div class="floating-container">
 
+      <div class="floating-container text-center small-12 medium-10 medium-centered large-8 large-centered columns">
         <h1><%= @hobby.name %></h1>
         <p><%= @hobby.description %></p>
+      </div>
 
-        <div class="text-center">
-          <a href="<%= hobbies_path %>" class="button">Your Hobbies</a>
-        </div>
+      <% @tasks.each do |task| %>
+      <div class="floating-container small-12 medium-10 medium-centered large-8 large-centered columns">
+        <h4 class="name"><%= task.task_name %></h4>
+        <p><%= task.link %></br><%= task.description %></p>
+      </div>
+      <% end %>
+
+      <div class="text-center ">
+        <a href="<%= new_hobby_task_path(@hobby) %>" class="button">Add a Challenge</a>
+        <a href="<%= hobbies_path %>" class="button">Your Hobbies</a>
       </div>
     </div>
   </div>
