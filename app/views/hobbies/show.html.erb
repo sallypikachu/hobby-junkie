@@ -1,4 +1,20 @@
 <div class="full-height bg-img">
+  <div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+<section class="left-small">
+    <a class="left-off-canvas-toggle" href="#" ><img src="../assets/menu-icon.png"></a>
+  </section>
+
+    <!-- Off Canvas Menu -->
+    <aside class="left-off-canvas-menu">
+        <!-- whatever you want goes here -->
+        <ul class="off-canvas-list">
+          <li><label>Passions</label></li>
+          <li><a href="#">Item 1</a></li>
+        ...
+        </ul>
+    </aside>
+
   <div class="row">
     <div class="small-12 columns">
 
@@ -10,7 +26,12 @@
       <% @tasks.each do |task| %>
       <div class="floating-container small-12 medium-10 medium-centered large-8 large-centered columns">
         <h4 class="name"><%= task.task_name %></h4>
-        <p><%= task.link %></br><%= task.description %></p>
+        <p><%= task.description %></p>
+        <% unless task.link.nil? || task.link.strip.empty? %>
+        <div class="video-container">
+          <iframe id="player" type="text/html" width="640" height="390" src="<%= task.link.gsub(/((https?:\/\/)?(www.)?youtube.com\/watch\?v=)/i, "https://www.youtube.com/embed/") %>" frameborder="0"></iframe>
+        </div>
+        <% end %>
       </div>
       <% end %>
 
@@ -20,4 +41,8 @@
       </div>
     </div>
   </div>
+</div>
+</div>
+<!-- close the off-canvas menu -->
+<a class="exit-off-canvas"></a>
 </div>

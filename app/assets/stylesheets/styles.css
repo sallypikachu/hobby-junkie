@@ -1,0 +1,83 @@
+/* Foundation */
+
+body h1, h2, h3, h4, h5, h6 {
+  font-family: 'Volkhov', serif;
+}
+
+.top-bar img {
+  height: 45px;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.button {
+ padding: .8rem 1.8rem 1rem 1.8rem;
+}
+
+/* Background Images */
+/*
+.bg-img {
+ background: url("background.jpg") no-repeat center center scroll;
+ background-size: cover;
+}*/
+
+.home {
+ background: url("home.jpg") no-repeat center center scroll;
+ background-size: cover;
+}
+
+/* Home Page */
+
+.shadow {
+ background: rgba(38,10,66,.7);
+ margin-top: 20%;
+}
+
+.shadow h1, h3 {
+ color: white;
+}
+
+.title {
+ font-family: 'Kaushan Script', cursive;
+}
+
+/* Floating container */
+.floating-container {
+ margin: 1rem;
+ padding: 1rem;
+ background: rgba(255, 255, 255, 0.88);
+ text-align: center;
+}
+
+.floating-container .name {
+ text-align: center;
+}
+
+.floating-container p {
+ margin: 0;
+}
+
+/* Menu Icon - Delete Border */
+.left-small {
+ border-right: none;
+}
+
+/* Youtube API */
+
+.video-container {
+   position: relative;
+   padding-bottom: 56.25%;
+   padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}

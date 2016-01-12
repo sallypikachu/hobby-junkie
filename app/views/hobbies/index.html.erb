@@ -5,11 +5,11 @@
     <div class="floating-container">
       <h1>Passions</h1>
     </div>
-    <div class="floating-container">
       <% @hobbies.each do |hobby| %>
+      <div class="floating-container">
         </h4><%= link_to hobby.name, hobby_path(hobby) %></h4>
+      </div>
       <% end %>
-    </div>
     <div class="text-center">
       <a href="<%= new_hobby_path %>" class="button">Add a New Hobby!</a>
     </div>
