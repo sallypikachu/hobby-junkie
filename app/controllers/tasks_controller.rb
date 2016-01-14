@@ -1,10 +1,13 @@
 class TasksController < ApplicationController
+
   def show
+    @hobbies = Hobby.where(user_id: session[:user_id])
     @hobby = Hobby.find(params[:hobby_id])
     @task = Task.find(params[:id])
   end
 
   def new
+    @hobbies = Hobby.where(user_id: session[:user_id])
     @hobby = Hobby.find(params[:hobby_id])
     @task = Task.new
   end

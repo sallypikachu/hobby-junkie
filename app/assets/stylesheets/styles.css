@@ -45,7 +45,6 @@ body h1, h2, h3, h4, h5, h6 {
 
 /* Floating container */
 .floating-container {
- margin: 1rem;
  padding: 1rem;
  background: rgba(255, 255, 255, 0.88);
  text-align: center;

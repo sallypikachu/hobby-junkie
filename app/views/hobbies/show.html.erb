@@ -1,48 +1,26 @@
-<div class="full-height bg-img">
-  <div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-<section class="left-small">
-    <a class="left-off-canvas-toggle" href="#" ><img src="../assets/menu-icon.png"></a>
-  </section>
+<div class="row">
+  <div class="small-12 columns">
 
-    <!-- Off Canvas Menu -->
-    <aside class="left-off-canvas-menu">
-        <!-- whatever you want goes here -->
-        <ul class="off-canvas-list">
-          <li><label>Passions</label></li>
-          <li><a href="#">Item 1</a></li>
-        ...
-        </ul>
-    </aside>
+    <div class="floating-container text-center small-12 medium-10 medium-centered large-8 large-centered columns">
+      <h1><%= @hobby.name %></h1>
+      <p><%= @hobby.description %></p>
+    </div>
 
-  <div class="row">
-    <div class="small-12 columns">
-
-      <div class="floating-container text-center small-12 medium-10 medium-centered large-8 large-centered columns">
-        <h1><%= @hobby.name %></h1>
-        <p><%= @hobby.description %></p>
-      </div>
-
-      <% @tasks.each do |task| %>
-      <div class="floating-container small-12 medium-10 medium-centered large-8 large-centered columns">
-        <h4 class="name"><%= task.task_name %></h4>
-        <p><%= task.description %></p>
-        <% unless task.link.nil? || task.link.strip.empty? %>
-        <div class="video-container">
-          <iframe id="player" type="text/html" width="640" height="390" src="<%= task.link.gsub(/((https?:\/\/)?(www.)?youtube.com\/watch\?v=)/i, "https://www.youtube.com/embed/") %>" frameborder="0"></iframe>
-        </div>
-        <% end %>
+    <% @tasks.each do |task| %>
+    <div class="floating-container small-12 medium-10 medium-centered large-8 large-centered columns">
+      <h4 class="name"><%= task.task_name %></h4>
+      <p><%= task.description %></p>
+      <% unless task.link.nil? || task.link.strip.empty? %>
+      <div class="video-container">
+        <iframe id="player" type="text/html" width="640" height="390" src="<%= task.link.gsub(/((https?:\/\/)?(www.)?youtube.com\/watch\?v=)/i, "https://www.youtube.com/embed/") %>" frameborder="0"></iframe>
       </div>
       <% end %>
+    </div>
+    <% end %>
 
-      <div class="text-center ">
-        <a href="<%= new_hobby_task_path(@hobby) %>" class="button">Add a Challenge</a>
-        <a href="<%= hobbies_path %>" class="button">Your Hobbies</a>
-      </div>
+    <div class="text-center ">
+      <a href="<%= new_hobby_task_path(@hobby) %>" class="button">Add a Challenge</a>
+      <a href="<%= hobbies_path %>" class="button">Your Hobbies</a>
     </div>
   </div>
-</div>
-</div>
-<!-- close the off-canvas menu -->
-<a class="exit-off-canvas"></a>
 </div>

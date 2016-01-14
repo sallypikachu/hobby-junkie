@@ -10,10 +10,12 @@ class HobbiesController < ApplicationController
   def show
     @hobby = Hobby.find(params[:id])
     @tasks = @hobby.tasks
+    @hobbies = Hobby.where(user_id: session[:user_id])
   end
 
   def new
     @hobby = Hobby.new
+    @hobbies = Hobby.where(user_id: session[:user_id])
   end
 
   def create
